@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1578166027 source:c:\users\parsa\desktop\c++\pipe line project ap 981\pipe.cpp
+	"Pipe.h"
+
+1578166008 c:\users\parsa\desktop\c++\pipe line project ap 981\pipe.h
+
+1578166163 source:c:\users\parsa\desktop\c++\pipe line project ap 981\main.cpp
+	<SFML/Graphics.hpp>
+
