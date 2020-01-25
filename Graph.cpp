@@ -58,19 +58,15 @@ void Graph::remove_path(int first , int next ) //  یال بین دو راس ر�
     graph[next][first] = false;
 }
 
-void Graph::Around_pusher (int first)
+vector <int> Graph::Around_pusher (int first)
 {
-    list <int > around;
-    for (int i =0 ; i < 25 ; i++)
-    {
-        if (graph[first][i] || graph[i][first])
+    vector <int> temp;
+        for ( int next = 0 ; next < 25 ; next++)
         {
-            around.push_back(i);
+            if(this->is_way(first , next))
+                temp.push_back(next);
         }
-    }
-        Around_vertex.push_back(around);
-        for (auto item : around )
-                        cout << item << " ";
-        cout << endl;
+    return temp;
+
 }
 

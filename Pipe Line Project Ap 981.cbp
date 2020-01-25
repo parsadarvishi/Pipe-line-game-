@@ -30,7 +30,14 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/sfml/include" />
 		</Compiler>
+		<Linker>
+			<Add library="sfml-graphics" />
+			<Add library="sfml-window" />
+			<Add library="sfml-system" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/sfml/lib" />
+		</Linker>
 		<Unit filename="Graph.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>

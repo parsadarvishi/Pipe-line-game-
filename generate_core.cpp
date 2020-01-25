@@ -1,11 +1,28 @@
 #include "Graph.h"
 #include "generate_core.h"
-#include <iostream>
-#include <vector>
+#include <iostream>]
+#include <iomanip>
 using namespace std;
 void Generate::create_game_graph()
 {
+    vector <int> temp;
     game.create_graph();
+        cout << "   ";
+    for ( int i = 0 ; i < 25 ; i++)
+    {
+        cout << setw(2) << i << " ";
+    }
+    cout << endl;
+    for ( int i = 0 ; i < 25 ; i++ )
+    {
+        cout << setw(2) << i << " ";
+        for (int j = 0 ; j < 25 ; j++)
+        {
+
+            cout << setw(2) << game.graph.at(i).at(j) << " ";
+        }
+        cout << endl;
+    }
     for(int i=0 ; i<25 ; i++)
     {
         if(!((i+1)%5 ==0))
@@ -19,6 +36,38 @@ void Generate::create_game_graph()
         {
             game.add_path(i,i+5);
         }
+    }
+    cout << "   ";
+    for ( int i = 0 ; i < 25 ; i++)
+    {
+        cout << setw(2) << i << " ";
+    }
+    cout << endl;
+    for ( int i = 0 ; i < 25 ; i++ )
+    {
+        cout << setw(2) << i << " ";
+        for (int j = 0 ; j < 25 ; j++)
+        {
+
+            cout << setw(2) << game.graph.at(i).at(j) << " ";
+        }
+        cout << endl;
+    }
+    for (int current = 0 ; current < 25 ; current++ )
+    {
+        temp = game.Around_pusher(current);
+        Around_vertex.push_back(temp);
+    }
+    int i =0;
+    for ( auto item : Around_vertex)
+    {
+        cout << i << "  --> ";
+        for ( auto items : item)
+        {
+            cout << items << " ";
+        }
+        cout << endl;
+        i++;
     }
    /* for (int i =0 ; i < 25 ; i++)
     {
