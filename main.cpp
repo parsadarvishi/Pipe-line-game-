@@ -1,7 +1,10 @@
 #include <SFML/Graphics.hpp>
-
+#include "Graph.cpp"
+#include "generate_core.cpp"
 int main()
 {
+        Generate G;
+        G.create_game_graph();
     sf::RenderWindow win(sf::VideoMode(200, 200), "PIPE LINE");
 
     while (win.isOpen())

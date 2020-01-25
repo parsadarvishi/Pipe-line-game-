@@ -39,6 +39,12 @@
 		</Unit>
 		<Unit filename="Pipe.cpp" />
 		<Unit filename="Pipe.h" />
+		<Unit filename="generate_core.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="generate_core.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

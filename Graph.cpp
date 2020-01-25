@@ -1,48 +1,51 @@
 #include "Graph.h"
 #include <vector>
-bool Graph::is_there_way(int first)
+#include <iostream>
+using namespace std;
+
+bool Graph::way_to_end(int first)
 {
+    int curser = 0 ;
     vector <bool> checked (25);
-    for (auto item : checked )
-        item = false;
-    list<int> queue  ;
+    for (int i = 0 ; i < 25 ; i++ )
+       checked[0]=false;
+    vector<int> queue  ;
     checked[first]=true;
     queue.push_back(first);
-    list <int> :: iterator i;
-    while (!queue.empty())
+    while (queue.at(0) !=-1)
     {
         first = queue.front();
-        first.pop_front();
+        queue.at(0)=-1;
 
-        for ( i = Around(first).begin() ; i< Around(first).end() ; i++)
+        for (int i =0 ; i < 25; i++)
         {
-            if(*i == 24 )
-                return turn;
+            if(i == 24 )
+                return true;
 
-            if(!cheched[*i])
+            if(!checked.at(i))
             {
-                visited[*i] = true ;
-                queue.push_back(*i);
+                checked.at(i) = true ;
+                queue.push_back(i);
             }
         }
     }
 }
-void Graph::creat_graph() // برای قطع کردن تمامی یال ها از راس ها در ماتریس مجاورت
+void Graph::create_graph() // برای قطع کردن تمامی یال ها از راس ها در ماتریس مجاورت
 {
-    for(auto item : graph)
+    for(int i = 0 ; i < 25 ; i++)
     {
-        for (auto item2 : item)
+        for (int j = 0 ; j < 25 ; j++)
         {
-            item2 = false;
+            graph[i][j] = false;
         }
     }
 }
 void Graph::add_path(int first , int next)  // اضافه کردن یال بین دو راس در ماتریس
 {
     graph[first][next] = true;
-    graph[next][firts] = true;
+    graph[next][first] = true;
 }
-void Graph::is_way(int first , int next ) // چک می کند ببیند آیا بین دو راس یالی وجود دارد یا نه
+bool Graph::is_way(int first , int next ) // چک می کند ببیند آیا بین دو راس یالی وجود دارد یا نه
 {
     if(graph[first][next] == true || graph[next][first] == true )
         return true ;
@@ -52,9 +55,10 @@ void Graph::is_way(int first , int next ) // چک می کند ببیند آیا 
 void Graph::remove_path(int first , int next ) //  یال بین دو راس را حدف می کند
 {
     graph[first][next] = false;
-    graph[next][firts] = false;
+    graph[next][first] = false;
 }
-list <int> Graph::Around (int first)
+
+void Graph::Around_pusher (int first)
 {
     list <int > around;
     for (int i =0 ; i < 25 ; i++)
@@ -64,5 +68,9 @@ list <int> Graph::Around (int first)
             around.push_back(i);
         }
     }
-        return around;
+        Around_vertex.push_back(around);
+        for (auto item : around )
+                        cout << item << " ";
+        cout << endl;
 }
+

@@ -4,6 +4,26 @@
 
 1578166008 c:\users\parsa\desktop\c++\pipe line project ap 981\pipe.h
 
-1578166163 source:c:\users\parsa\desktop\c++\pipe line project ap 981\main.cpp
+1579587607 source:c:\users\parsa\desktop\c++\pipe line project ap 981\main.cpp
 	<SFML/Graphics.hpp>
+	"Graph.cpp"
+	"generate_core.cpp"
+
+1578745567 c:\users\parsa\desktop\c++\pipe line project ap 981\graph.cpp
+	"Graph.h"
+	<vector>
+	<iostream>
+
+1578744888 c:\users\parsa\desktop\c++\pipe line project ap 981\graph.h
+	<array>
+	<list>
+
+1579588606 c:\users\parsa\desktop\c++\pipe line project ap 981\generate_core.cpp
+	"Graph.h"
+	"generate_core.h"
+	<iostream>
+	<vector>
+
+1578381354 c:\users\parsa\desktop\c++\pipe line project ap 981\generate_core.h
+	"Graph.h"
 
